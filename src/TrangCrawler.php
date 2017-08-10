@@ -1,11 +1,13 @@
 <?php
 require_once('config.php');
-require_once(__ROOT__.'/phpcrawl/libs/PHPCrawler.class.php'); 
-require_once(__ROOT__.'/simplehtmldom_1_5/simple_html_dom.php');
 
-class TrangCrawler extends PHPCrawler {
-    
-    function innertext($url) {
+class TrangCrawler{
+    /**
+     * Get innertext with class = midashi
+     * @param  [string] $url [description]
+     * @return [string]      [description]
+     */
+    public function innertext($url) {
         $html = file_get_html($url);
         
         if (is_object($html)) {
